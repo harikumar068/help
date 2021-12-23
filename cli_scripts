@@ -1,3 +1,18 @@
- Create Bucket using AWS CLI
- aws s3api create-bucket --bucket 20211203001 --region us-east-1
-aws ec2 stop-instances --instance-ids i-0efa5110da5f348df
+Install Python3
+$ sudo apt install python3
+Install pip
+$ sudo apt install python3-pip
+Install awscli
+$ sudo apt install awscli
+Configure AWS CLI
+$ aws configure
+AWS Access Key ID [None]: *************************
+AWS Secret Access Key [None]: **********************************
+Default region name [None]: us-east-1
+Default output format [None]: json
+list AWS Bucket
+$ aws s3 ls (List AWS Bucket)
+Create Bucket using AWS CLI
+$ aws s3api create-bucket --bucket 20211203001 --region us-east-1
+Stop Instances using Instance ID
+$ aws ec2 stop-instances --instance-ids i-0efa5110da5f348df
