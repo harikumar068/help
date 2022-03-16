@@ -1,0 +1,46 @@
+---
+- name: ping modules
+  hosts: all
+  become: false
+
+  tasks:
+    - name: test connection
+      ping:
+- name: ping modules
+  hosts: all
+  become: false
+
+  tasks:
+    - name: test connection
+      ping:
+- name: debug module demo
+  hosts: all
+  tasks:
+    - name: debug message
+      ansible.builtin.debug:
+        msg: "This is a Test"
+- name: debug module demo
+  hosts: all
+  vars:
+    fruit: "apple"
+  tasks:
+    - name: debug message
+      ansible.builtin.debug:
+        var: fruit
+- name: debug module demo
+  hosts: all
+  vars:
+    fruit: "apple"
+  tasks:
+    - name: debug message
+      ansible.builtin.debug:
+        msg: "Our fruit is {{ fruit }}"
+- name: debug module demo
+  hosts: all
+  vars:
+    fruit: "apple"
+  tasks:
+    - name: debug message
+      ansible.builtin.debug:
+        msg: "Our fruit is {{ fruit }}"
+        verbosity: 2

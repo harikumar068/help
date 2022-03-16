@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  become: yes
+  tasks:
+  - name: delete user
+    user:
+      name: test-user
+      state: absent

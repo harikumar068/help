@@ -1,0 +1,31 @@
+---
+- hosts: all
+  tasks:
+  - name: Creating an empty file
+    file:
+      path: "/home/20211124001.txt"
+      state: touch
+  become: yes
+- name: file permission module
+  hosts: all
+  vars:
+    myfile: "/home/20211124001.txt"
+  become: true
+  tasks:
+    - name: check permission
+      ansible.builtin.file:
+        path: "{{ myfile }}"
+        owner: "ansadmin"
+        group: "ansadmin"
+        mode: '0777'
+- name: add content to file
+  hosts: 10.1.1.60
+  become: true
+  tasks:
+  - name: Add Content to 20211124001.txt
+    ansible.builtin.blockinfile:
+     state: present
+     dest: /home/20211124001.txt
+     content: |
+       Hey this is just a test
+       I am just checking the file by adding the complexicity

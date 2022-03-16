@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: installing package
+      apt: name=apache2 update_cache=yes state=latest
+
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: removing package
+      apt:
+        name: apache2
+        state: absent

@@ -1,0 +1,11 @@
+---
+- name: line in file module demo
+  hosts: all
+  become: true
+  tasks:
+    - name: allow password authentication
+      ansible.builtin.lineinfile:
+        sate: present
+        dest: /etc/ssh/sshd_config
+        line: "# Hey this is Test Modification Line"
+

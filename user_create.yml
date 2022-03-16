@@ -1,0 +1,9 @@
+---
+
+- hosts: dev-servers
+  become: yes
+  tasks:
+  - name: create user
+    user:
+      name: test-user
+      state: present

@@ -1,0 +1,21 @@
+---
+- hosts: all
+  tasks:
+  - name: Creating an empty file
+    file:
+      path: "/home/test.txt"
+      state: touch
+  become: yes
+- name: file permission module
+  hosts: all
+  vars:
+    myfile: "/home/test.txt"
+  become: true
+  tasks:
+    - name: check permission
+      ansible.builtin.file:
+        path: "{{ myfile }}"
+        owner: "ansadmin"
+        group: "ansadmin"
+        mode: '0777'
+

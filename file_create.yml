@@ -1,0 +1,19 @@
+---
+- hosts: all
+  tasks:
+  - name: Creating an empty file
+    file:
+      path: "/home/file01.txt"
+      state: touch
+  become: yes
+- name: add content to file
+  hosts: 10.1.1.60
+  become: true
+  tasks:
+
+  - name: Generate test_file.txt
+    ansible.builtin.blockinfile:
+     state: present
+     dest: /home/file01.txt
+     content: |
+       Hey this is just a test

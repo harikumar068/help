@@ -1,0 +1,7 @@
+---
+ - hosts: all
+   tasks:
+   - debug:
+       var: ansible_facts["default_ipv4"]
+   - debug:
+       var: ansible_facts["date_time"]

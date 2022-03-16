@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  tasks:
+  - name: Deleting a file
+    file:
+      path: "/home/test_file.txt"
+      state: absent
+  become: yes
+
