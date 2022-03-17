@@ -1,0 +1,13 @@
+---
+- name: check os of the instance
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Check if oracle linux is installed
+      shell: |
+        cat: /etc/system-release
+      register: os_name
+      ignore_errors: yes
+#    - debug:
+ #   msg: "{{os_name.stdout}}"
