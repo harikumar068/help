@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Updating Installed Packages that are necessary
+      apt:
+        name: update
+        update_cache: yes
+        state: latest
+    - name: Upgrading Installed Packages that are necessary
+      apt:
+        name: upgrade 
+        update_cache: yes
+        state: latest
+
+
+
+#        autoremove: yes
