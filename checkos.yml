@@ -1,6 +1,6 @@
 ---
 - name: check os of the instance
-  hosts: all
+  hosts: {{inventory}}
   become: true
 
   tasks:
