@@ -1,12 +1,5 @@
 ---
-- hosts: localhost
-  become: yes
-
-  tasks:
-    - name: installing package
-      apt: name=apache2 update_cache=yes state=latest
-
-- hosts: localhost
+- hosts: all
   become: yes
 
   tasks:
@@ -14,3 +7,8 @@
       apt:
         name: apache2
         state: absent
+
+    - name: Delete content & directory
+      file:
+        state: absent
+        path: /etc/apache2/

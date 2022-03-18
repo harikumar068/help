@@ -4,7 +4,7 @@
 
   tasks:
   - name: Ensure chrony (for time synchronization) is installed.
-    yum:
+    apt:
       name: chrony
       state: present
 

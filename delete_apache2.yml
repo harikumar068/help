@@ -1,23 +1,5 @@
 ---
-- hosts: slave
-  become: yes
-
-  tasks:
-    - name: Un-installing package apache2
-      apt:
-        name: apache2
-        state: absent
-
-- hosts: debain
-  become: yes
-
-  tasks:
-    - name: Un-installing package apache2
-      apt:
-        name: apache2
-        state: absent
-
-- hosts: jenkins
+- hosts: all
   become: yes
 
   tasks:
