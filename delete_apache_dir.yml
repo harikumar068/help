@@ -8,7 +8,6 @@
         name: apache2
         state: absent
 
-    - name: Delete content & directory
-      file:
-        state: absent
-        path: /etc/apache2/
+    - name: Going to Delete Apache2
+      ansible.builtin.shell:
+        cmd: rm -rf /etc/apache2/
